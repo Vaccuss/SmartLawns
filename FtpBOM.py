@@ -27,14 +27,17 @@ def main():
             reading = city[1]
             info['UVReading'] = reading
     print(weatherOutput["Townsville"])
+    saveJSONFile(weatherOutput)
 
 
 def saveJSONFile(dict):
     """
+    Takes a Python dictionary saves it to collection.json
     :param dict: Python Dictionary
     :return: Null
     """
-
+    dataFilecollection = open('collection.json', 'w')
+    dataFilecollection.write(json.dumps(dict))
 
 def ftpGetFiles(retriveFile):
     global rawFile
