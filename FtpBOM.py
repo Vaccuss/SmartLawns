@@ -16,6 +16,8 @@ keyList = ['loc_id', 'location', 'state', 'forecast_date', 'date', 'issue_time',
 
 rawFile = ''
 
+print("hello")
+
 
 def main():
     weatherDataFile = "IDA00001.dat"
@@ -29,8 +31,7 @@ def main():
             info = weatherOutput.get(city[0])
             reading = city[1]
             info['UVReading'] = reading
-            print(info)
-    print(weatherOutput)
+
 
 def ftpGetFiles(retriveFile):
     global rawFile
