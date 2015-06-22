@@ -16,9 +16,6 @@ keyList = ['loc_id', 'location', 'state', 'forecast_date', 'date', 'issue_time',
 
 rawFile = ''
 
-print("hello")
-
-
 def main():
     weatherDataFile = "IDA00001.dat"
     uvdataFile = 'IDYGP007.txt'
