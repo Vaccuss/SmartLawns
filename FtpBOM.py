@@ -1,13 +1,10 @@
 __author__ = 'Dean'
 
-import ftplib
+import ftplib, io, json
 
 # TODO Make this shit into a class
 # TODO convert forecast into percentage based on prediction when dict is being created
-# TODO This class will:
-# TODO       Access the ftp server of BOM
-# TODO       Process the file that comes back
-# TODO       Save file to directory (In the future to a databases of some sort mongoDB is current winner)
+
 
 keyList = ['loc_id', 'location', 'state', 'forecast_date', 'date', 'issue_time', 'min_0', 'max_0', 'min_1', 'max_1',
            'min_2', 'max_2', 'min_4', 'max_4', 'min_5', 'max_5', 'min_6', 'max_6', 'min_7', 'max_7', 'forecast_0',
@@ -15,6 +12,7 @@ keyList = ['loc_id', 'location', 'state', 'forecast_date', 'date', 'issue_time',
            ]
 
 rawFile = ''
+
 
 def main():
     weatherDataFile = "IDA00001.dat"
@@ -28,6 +26,14 @@ def main():
             info = weatherOutput.get(city[0])
             reading = city[1]
             info['UVReading'] = reading
+    print(weatherOutput["Townsville"])
+
+
+def saveJSONFile(dict):
+    """
+    :param dict: Python Dictionary
+    :return: Null
+    """
 
 
 def ftpGetFiles(retriveFile):
